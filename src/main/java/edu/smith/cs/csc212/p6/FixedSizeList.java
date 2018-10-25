@@ -23,9 +23,11 @@ public class FixedSizeList<T> implements P6List<T> {
 		if (this.size() == 0) {
 			throw new EmptyListError();
 		}
-		fill--;
-		T value = this.getIndex(fill);
-		this.array[fill] = null;
+		
+		T value = this.getIndex(fill-1);
+		this.array[fill-1] = null;			
+
+		fill--;	
 		return value;
 	}
 
@@ -92,6 +94,7 @@ public class FixedSizeList<T> implements P6List<T> {
 	@Override
 	public boolean isEmpty() {
 		return this.fill == 0;
+		
 	}
 
 	@Override

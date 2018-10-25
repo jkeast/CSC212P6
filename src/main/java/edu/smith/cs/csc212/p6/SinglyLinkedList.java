@@ -17,11 +17,32 @@ public class SinglyLinkedList<T> implements P6List<T>, Iterable<T> {
 		T before = start.value;
 		start = start.next;
 		return before;
+		
 	}
 
 	@Override
 	public T removeBack() {
-		throw new P6NotImplemented();
+		if(start == null) {
+			throw new EmptyListError();
+		} if (start.next == null) {
+			T found = start.value;
+			start = null;
+			return found;
+		} else {
+			Node<T> last = null;
+			Node<T> nextLast = null;
+			for (Node<T> current = start; current != null; current = current.next) {
+				last = current;
+			}
+
+			for (Node<T> current = start; current != last; current = current.next) {
+				nextLast = current;
+			}
+			nextLast.next = null;
+			T found = last.value;
+			return found;
+			}
+		//throw new P6NotImplemented();
 	}
 
 	@Override
@@ -41,7 +62,7 @@ public class SinglyLinkedList<T> implements P6List<T>, Iterable<T> {
 
 	@Override
 	public void addIndex(T item, int index) {
-		throw new P6NotImplemented();
+		//throw new P6NotImplemented();
 	}
 
 	@Override
@@ -70,7 +91,8 @@ public class SinglyLinkedList<T> implements P6List<T>, Iterable<T> {
 
 	@Override
 	public boolean isEmpty() {
-		throw new P6NotImplemented();
+		return size()==0;
+		//throw new P6NotImplemented();
 	}
 
 	/**

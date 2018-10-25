@@ -3,7 +3,7 @@ package edu.smith.cs.csc212.p6;
 import org.junit.Test;
 
 import edu.smith.cs.csc212.p6.errors.EmptyListError;
-import edu.smith.cs.csc212.p6.errors.RanOutOfSpaceError;
+
 
 import org.junit.Assert;
 
@@ -91,15 +91,15 @@ public class GrowableListTest {
 		return data;
 	}
 	
-	@Test(expected=RanOutOfSpaceError.class)
-	public void testAddBackFull() {
-		makeFullList().addBack("no space");
-	}
+	//@Test(expected=RanOutOfSpaceError.class)
+	//public void testAddBackFull() {
+	//	makeFullList().addBack("no space");
+	//}
 	
-	@Test(expected=RanOutOfSpaceError.class)
-	public void testAddFrontFull() {
-		makeFullList().addFront("no space");
-	}
+	//@Test(expected=RanOutOfSpaceError.class)
+	//public void testAddFrontFull() {
+	//	makeFullList().addFront("no space");
+	//}
 	
 	//@Test(expected=RanOutOfSpaceError.class)
 	//public void testAddIndexFull() {
